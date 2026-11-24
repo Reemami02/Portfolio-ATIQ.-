@@ -1,0 +1,25 @@
+<section class="admin-page">
+  <div class="admin-heading"><p>ATIQ / ADMIN</p><h1>Men Products</h1><span>Add, edit and delete products.</span></div>
+  <form class="admin-form" #productForm="ngForm" (ngSubmit)="save()">
+    <h2>{{ editingId ? 'Edit Product' : 'Add New Product' }}</h2>
+    <div class="form-grid">
+      <label>Product name<input name="name" [(ngModel)]="form.name" required></label>
+      <label>Category<input name="category" [(ngModel)]="form.category"></label>
+      <label>Price (EGP)<input type="number" name="price" [(ngModel)]="form.price" min="0" required></label>
+      <label>Stock<input type="number" name="stock" [(ngModel)]="form.stock" min="0" required></label>
+      <label class="wide">Image URL<input name="image" [(ngModel)]="form.image" placeholder="https://..."></label>
+      <label class="wide">Description<textarea name="description" [(ngModel)]="form.description" rows="3"></textarea></label>
+    </div>
+    <div class="form-actions"><button type="submit" [disabled]="productForm.invalid">{{ editingId ? 'Save Changes' : 'Add Product' }}</button><button type="button" class="secondary" (click)="reset()">Clear</button></div>
+    @if (message) { <p class="notice">{{ message }}</p> }
+  </form>
+  <div class="admin-list"><h2>Products ({{ products.length }})</h2>
+    @for (product of products; track product._id) {
+      <article class="admin-item">
+        @if (product.image) { <img [src]="product.image" [alt]="product.name"> }
+        <div class="item-info"><h3>{{ product.name }}</h3><p>{{ product.category }} · {{ product.price }} EGP · Stock: {{ product.stock }}</p></div>
+        <div class="item-actions"><button type="button" (click)="edit(product)">Edit</button><button type="button" class="danger" (click)="remove(product._id)">Delete</button></div>
+      </article>
+    } @empty { <p>No products yet.</p> }
+  </div>
+</section>

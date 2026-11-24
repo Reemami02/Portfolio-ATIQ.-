@@ -1,0 +1,112 @@
+:host {
+  display: block;
+}
+
+.not-found {
+  min-height: 75vh;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.content {
+  max-width: 600px;
+  width: 100%;
+}
+
+.error-label {
+  color: #a68a64;
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: clamp(130px, 22vw, 220px);
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -12px;
+  color: #101d36;
+  margin: 25px 0 15px;
+}
+
+h1 span {
+  color: #b99a70;
+}
+
+.divider {
+  width: 55px;
+  height: 2px;
+  background: #b99a70;
+  margin: 25px auto;
+}
+
+h2 {
+  color: #101d36;
+  font-size: 19px;
+  letter-spacing: 5px;
+  font-weight: 600;
+}
+
+.content p {
+  color: #777f8d;
+  font-size: 14px;
+  line-height: 1.9;
+  max-width: 390px;
+  margin: 18px auto 30px;
+}
+
+.home-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;
+  background: #101d36;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 17px 25px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  transition: 0.3s;
+}
+
+.home-btn:hover {
+  background: #b99a70;
+  color: #101d36;
+}
+
+.home-btn span {
+  font-size: 18px;
+}
+
+.bottom-text {
+  display: flex;
+  flex-direction: column;
+  margin-top: 65px;
+  gap: 5px;
+}
+
+.bottom-text span:first-child {
+  color: #101d36;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
+
+.bottom-text span:last-child {
+  color: #a68a64;
+  font-size: 8px;
+  letter-spacing: 3px;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    letter-spacing: -6px;
+  }
+
+  h2 {
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,25 @@
+<header class="navbar">
+  <div class="navbar-container">
+    <a routerLink="/dashboard" class="logo" (click)="closeMenu()">
+      <span class="logo-name">ATIQ<span>.</span></span>
+      <span class="logo-caption">ADMIN DASHBOARD</span>
+    </a>
+    <nav class="nav-links" [class.active]="isMenuOpen">
+      <a routerLink="/dashboard/home" routerLinkActive="active" (click)="closeMenu()">Overview</a>
+      <a routerLink="/dashboard/men" routerLinkActive="active" (click)="closeMenu()">Men</a>
+      <a routerLink="/dashboard/women" routerLinkActive="active" (click)="closeMenu()">Women</a>
+      <a routerLink="/dashboard/about" routerLinkActive="active" (click)="closeMenu()">About</a>
+      <a routerLink="/dashboard/contact" routerLinkActive="active" (click)="closeMenu()">Messages & Contact</a>
+      <a routerLink="/dashboard/users" routerLinkActive="active" (click)="closeMenu()">Users</a>
+      <a routerLink="/dashboard/orders" routerLinkActive="active" (click)="closeMenu()">Orders</a>
+    </nav>
+    <div class="nav-actions">
+      <a routerLink="/" class="account-link">View Store</a>
+      <button class="account-link" type="button" (click)="logout()">Logout</button>
+    </div>
+    <button class="menu-toggle" type="button" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen" aria-label="Toggle navigation">
+      <span [class.open]="isMenuOpen"></span><span [class.open]="isMenuOpen"></span>
+    </button>
+  </div>
+  <div class="nav-line"></div>
+</header>
